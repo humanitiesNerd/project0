@@ -1,6 +1,6 @@
 (page "index.html"
       (:require
-        [tailrecursion.hoplon.util   :as hutil]))
+        [exicon.semantic-ui]))
 
 (def route (route-cell "#/home/"))
 
