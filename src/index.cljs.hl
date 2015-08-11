@@ -6,29 +6,30 @@
 
 (with-page-load (.. js/window -location reload))
 
-(defelem viewport [attr kids] (html-meta :name "viewport"     :content (first kids)))
+(defelem viewport [attr kids]
+  (html-meta :name "viewport"
+             :content (first kids)))
 
 (defn setup []
-  (vector
-    (viewport "width=device-width, initial-scale=1.0") 
-    (html-meta :content "https://twitter.com/catonano" :name "author" )
-    ))
+  [(viewport "width=device-width, initial-scale=1.0")
+   (html-meta
+     :content "https://twitter.com/catonano"
+     :name "author")])
 
 (html
   :lang "en"
   (head
-    (html-meta
-      :charset "utf-8")
+    (html-meta :charset "utf-8")
     (setup)
-    (title "Project0"))
+    (title "Project0")
+    (link :href "/semantic-ui.css" :rel "stylesheet"))
   (body
     (div
-      (a
-       :do-scroll-to (cell= route))
+      (a :do-scroll-to (cell= route))
       (noscript
-        (div
-          "This page uses JavaScript but it looks like you have it turned off."))
-     ((div :class "ui main text container")
-        (h1 :class "ui header" "Sticky Example")
-        (p "This example shows how to use lazy loaded images, a sticky menu, and a simple text container")))))
-
+        (div (str "This page uses JavaScript "
+                  "but it looks like you have it turned off.")))
+      (div :class "ui main text container"
+           (h1 :class "ui header" "Sticky Example")
+           (p (str "This example shows how to use lazy loaded images, "
+                   "a sticky menu, and a simple text container"))))))
