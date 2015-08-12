@@ -32,7 +32,6 @@
     (sift :to-resource #{#"semantic-ui.inc.css"})
     (sift :move {#"^semantic-ui.inc.css$" "semantic-ui.css"})
     (watch)
-;    (speak)
     (serve :dir "target")
     (hoplon)
     (reload)
