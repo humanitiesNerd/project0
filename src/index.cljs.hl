@@ -29,22 +29,23 @@
       (noscript
         (div (str "This page uses JavaScript "
                   "but it looks like you have it turned off.")))
-      (form :class "ui form"
-            (div :class "field"
-                 (label "Da")
-                 (input
-                  :name "da"
-                  :placeholder "Da"
-                  :type "text"))
-            (div :class "field"
-                 (label "A")
-                 (input
-                  :name "a"
-                  :placeholder "A"
-                  :type "text"))
+      (form :class "ui large form"
+            
+                 (div :class "field"
+                      (label "Da")
+                      (input
+                       :name "da"
+                       :placeholder "Da"
+                       :type "text"))
+                 (div :class "field"
+                      (label "A")
+                      (input
+                       :name "a"
+                       :placeholder "A"
+                       :type "text")))
                    
            
             (button
-             :class "ui button"
+             :class "large ui button"
              :type "submit"
              (str "Submit"))))))
