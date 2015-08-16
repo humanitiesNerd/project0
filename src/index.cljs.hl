@@ -29,24 +29,21 @@
       (noscript
         (div (str "This page uses JavaScript "
                   "but it looks like you have it turned off.")))
-      (div :class "ui main text container"
-           (h1 :class "ui header" "Sticky Example")
-           (p (str "This example shows how to use lazy loaded images, "
-                   "a sticky menu, and a simple text container")))
       (form :class "ui form"
             (div :class "field"
-                 (label "First Name")
+                 (label "Da")
                  (input
-                  :name "first-name"
-                  :placeholder "First Name"
+                  :name "da"
+                  :placeholder "Da"
                   :type "text"))
             (div :class "field"
-                 (div :class "ui chackbox"
-                      (input
-                       :class "hidden"
-                       :tabindex "0"
-                       :type "checkbox")
-                      (label (str "I agree to the Terms and Conditions"))))
+                 (label "A")
+                 (input
+                  :name "a"
+                  :placeholder "A"
+                  :type "text"))
+                   
+           
             (button
              :class "ui button"
              :type "submit"
