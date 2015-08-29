@@ -6,6 +6,10 @@
 
 (with-page-load (.. js/window -location reload))
 
+
+(defn get-hash [link] (subs link (.indexOf link "#")))
+(defn active? [link route] (let [h (get-hash link)] (= h (subs route 0 (count h)))))
+
 (defelem viewport [attr kids]
   (html-meta :name "viewport"
              :content (first kids)))
@@ -23,29 +27,32 @@
     (setup)
     (title "Project0")
     (link :href "/semantic-ui.css" :rel "stylesheet"))
+
   (body
     (div
       (a :do-scroll-to (cell= route))
       (noscript
         (div (str "This page uses JavaScript "
                   "but it looks like you have it turned off.")))
-      (form :class "ui large form"
-            
-                 (div :class "field"
-                      (label "Da")
-                      (input
-                       :name "da"
-                       :placeholder "Da"
-                       :type "text"))
-                 (div :class "field"
-                      (label "A")
-                      (input
-                       :name "a"
-                       :placeholder "A"
-                       :type "text")))
-                   
-           
-            (button
-             :class "large ui button"
-             :type "submit"
-             (str "Submit"))))))
+      (div
+       (form :class "ui large form"
+             :method "POST"  
+             :action "#/results"
+             (div :class "field"
+                  (label "Da")
+                  (input
+                   :name "da"
+                   :placeholder "Da"
+                   :type "text"))
+             (div :class "field"
+                  (label "A")
+                  (input
+                   :name "a"
+                   :placeholder "A"
+                   :type "text"))
+             (button
+              :class "large ui button right floated"
+              :type "submit"
+              (str "Submit"))))
+      (div :do-toggle (cell= (active? "#/results" route))
+           (str "Results")))))
