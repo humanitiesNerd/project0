@@ -31,12 +31,11 @@
     (link :href "/semantic-ui.css" :rel "stylesheet"))
 
   (body
-    (div
-      (a :scroll-to (cell= route))
+    (div      
       (noscript
         (div (str "This page uses JavaScript "
                   "but it looks like you have it turned off.")))
-      (div
+      (div :toggle (cell= (active? "#/home" route))
        (form :class "ui large form"
              :method "POST"  
              :action "#/results"
