@@ -247,7 +247,7 @@
             "large ui button right floated"
             :type
             "submit"
-            "Submit")))
+            (str "Submit"))))
       ((div :toggle (cell= (active? "#/results" route)))
         (div
           :class
